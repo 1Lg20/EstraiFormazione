@@ -1,0 +1,37 @@
+*{
+	font-family: 'Acme';
+}
+
+.Title{
+	font-size: 150%;
+}
+
+body {
+	background-image: url(./../Img/Background.jpg);
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+#campo{
+	background-image: url("./../Img/Campo.avif");
+}
+
+#Formazione{
+	background: none;
+	text-align: center;
+	border: 2px solid #003153;
+	border-radius: 10px;
+}
+
+#Genera{
+	border: 3px solid #FFBF00;
+	border-radius: 50px;
+	background-color: rgba(0, 255, 0, 0.5);
+}
+
+.card{
+	width: 65%;
+	height: 85%;
+}

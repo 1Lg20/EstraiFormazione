@@ -1,0 +1,5 @@
+let ModuliJson="https://raw.githubusercontent.com/1Lg20/jsonEaSportsFc/main/Moduli.json"
+let PortieriJson="https://raw.githubusercontent.com/1Lg20/jsonEaSportsFc/main/Portieri.json"
+let DifensoriJson="https://raw.githubusercontent.com/1Lg20/jsonEaSportsFc/main/Difensori.json"
+let CentrocampistiJson="https://raw.githubusercontent.com/1Lg20/jsonEaSportsFc/main/Centrocampisti.json"
+let AttaccantiJson="https://raw.githubusercontent.com/1Lg20/jsonEaSportsFc/main/Attaccanti.json"

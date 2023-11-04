@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Fifa Generator</title>
+
+	<!-- Icona Scheda -->
+	<link rel="icon" href="./Img/favIcon.jpg" type="image/png" />
+	<!-- Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Acme&family=Foldit:wght@500&display=swap" rel="stylesheet">
+	<!-- Css -->
+	<link rel="stylesheet" href="./Css/Style.css">
+	<!-- Css Bootstrap -->
+	<link rel="stylesheet" href="./bootstrap/bootstrapV5.min.css">
+	<!-- Js -->
+	<script src="./Js/Script.js"></script>
+	<script src="./Js/Link.js"></script>
+</head>
+<body>
+	<div class="container">
+		<!-- Header -->
+		<div class="row">
+			<div class="col d-flex align-items-center justify-content-center Title">
+				Generatore di Formazioni Fifa
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 d-flex align-items-center justify-content-center mt-3">
+				<select name="formazione" id="Formazione" onchange="Formazione()">
+					<option value="NONE">MODULO</option>
+					<option value="4-3-3">4-3-3</option>
+					<option value="3-5-2">3-5-2</option>
+					<option value="5-3-2">5-3-2</option>
+					<option value="3-4-3">3-4-3</option>
+					<option value="4-3-3 contenimento">4-3-3 contenimento</option>
+					<option value="4-3-3 offensivo">4-3-3 offensivo</option>
+					<option value="4-4-1-1 offensivo">4-4-1-1 offensivo</option>
+				</select></div>
+			<div class="col-12  d-flex align-items-center justify-content-center mt-3"><input id="Genera" type="button" value="Genera Formazione" onclick="Giocatori()"></div>
+		</div>
+		<!-- Formazione -->
+		<div class="row" id="Campo">
+			<!-- Portieri -->
+			<div class="col-12 d-flex justify-content-center align-items-center mt-2">
+				<div class="row justify-content-center align-items-center" id="Portieri"></div>
+			</div>
+			<!-- Difensori -->
+			<div class="col-12 d-flex justify-content-center align-items-center mt-2">
+				<div class="row justify-content-center align-items-center" id="Difensori"></div>
+			</div>
+			<!-- Centrocampisti -->
+			<div class="col-12 d-flex justify-content-center align-items-center mt-2">
+				<div class="row justify-content-center align-items-center" id="Centrocampisti"></div>
+			</div>
+			<!-- Attaccanti -->
+			<div class="col-12 d-flex justify-content-center align-items-center mt-2">
+				<div class="row justify-content-center align-items-center" id="Attaccanti"></div>
+			</div>
+			<div style="height: 10px;"></div>
+		</div>
+
+	</div>
+	<!-- JS Bootstrap -->
+	<script src="./bootstrap/bootstrapV5.bundle.min.js"></script>
+	<!-- Js Sweet Alert -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
