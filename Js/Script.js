@@ -124,20 +124,35 @@ const Cancella=()=>{
 	
 }
 
+
+//Il while ed il try catch sono stati inseriti perchè in fase di sviluppo si generavano degli errori nella lettura del Json
+//Gli errori non dovrebbero più presentarsi, ma il controllo è rimasto per evitare problemi futuri
 const Giocatori=()=>{
 	if (Stampato==true) {
 		let min=0
 		let max
 		let num
+		let ok=false
+		let usati=[]
 
 		fetch(PortieriJson)
 		.then(Portieri=>Portieri.json())
 		.then(Portieri=>{
 			max=Portieri.length
-			num=Math.floor(Math.random() * max)
-			console.log("Centrocampo Indice"+num)
-			document.querySelector("#Portire-"+0).setAttribute("src",Portieri[num].Immagine)
-			document.querySelector("#Portire-"+0).setAttribute("class","card2")
+			while (ok==false) {
+				try {
+					num=Math.floor(Math.random() * max)
+					console.log("Portiere Indice: "+num)
+					document.querySelector("#Portire-"+0).setAttribute("src",Portieri[num].Immagine)
+					document.querySelector("#Portire-"+0).setAttribute("class","card2")
+					ok=true
+				} catch {
+					console.log("Errore per indice: "+num)
+					ok=false
+				}
+			}
+			
+			
 		})
 
 		fetch(DifensoriJson)
@@ -145,10 +160,21 @@ const Giocatori=()=>{
 		.then(Difensori=>{
 			max=Difensori.length
 			for (let i = 0; i < NDifensori; i++) {
-				num=Math.floor(Math.random() * max-1)
-				console.log("Centrocampo Indice"+num)
-				document.querySelector("#Difensore-"+i).setAttribute("src",Difensori[num].Immagine)
-				document.querySelector("#Difensore-"+i).setAttribute("class","card2")
+				ok=false
+				while (ok==false) {
+					try {
+						num=Math.floor(Math.random() * max)
+						console.log("Difesa Indice: "+num)
+						document.querySelector("#Difensore-"+i).setAttribute("src",Difensori[num].Immagine)
+						document.querySelector("#Difensore-"+i).setAttribute("class","card2")
+						usati.push(num)
+						ok=true
+					} catch {
+						console.log("Errore per indice: "+num)
+						ok=false
+					}
+				}
+				
 			}
 
 		})
@@ -158,10 +184,20 @@ const Giocatori=()=>{
 		.then(Centrocampisti=>{
 			max=Centrocampisti.length
 			for (let i = 0; i < NCentrocampisti; i++) {
-				num=Math.floor(Math.random() * max)
-				console.log("Centrocampo Indice"+num)
-				document.querySelector("#Centrocampista-"+i).setAttribute("src",Centrocampisti[num].Immagine)
-				document.querySelector("#Centrocampista-"+i).setAttribute("class","card2")
+				ok=false
+				while (ok==false) {
+					try {
+						num=Math.floor(Math.random() * max)
+						console.log("Centrocampo Indice: "+num)
+						document.querySelector("#Centrocampista-"+i).setAttribute("src",Centrocampisti[num].Immagine)
+						document.querySelector("#Centrocampista-"+i).setAttribute("class","card2")
+						ok=true
+					} catch {
+						console.log("Errore per indice: "+num)
+						ok=false
+					}
+				}
+				
 			}
 
 		})
@@ -171,10 +207,20 @@ const Giocatori=()=>{
 		.then(Attaccanti=>{
 			max=Attaccanti.length
 			for (let i = 0; i < NAttaccanti; i++) {
-				num=Math.floor(Math.random() * max)
-				console.log("Centrocampo Indice"+num)
-				document.querySelector("#Attaccante-"+i).setAttribute("src",Attaccanti[num].Immagine)
-				document.querySelector("#Attaccante-"+i).setAttribute("class","card2")
+				ok=false
+				while (ok==false) {
+					try {
+						num=Math.floor(Math.random() * max)
+						console.log("Attacco Indice: "+num)
+						document.querySelector("#Attaccante-"+i).setAttribute("src",Attaccanti[num].Immagine)
+						document.querySelector("#Attaccante-"+i).setAttribute("class","card2")
+						ok=true
+					} catch {
+						console.log("Errore per indice: "+num)
+						ok=false
+					}
+				}
+				
 			}
 
 		})
